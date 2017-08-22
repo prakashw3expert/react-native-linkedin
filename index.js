@@ -190,7 +190,7 @@ export default class LinkedInModal extends React.Component {
   }
   state: State = {
     raceCondition: false,
-    modalVisible: false,
+    modalVisible: this.props.visiblity,
   }
 
   onLoadStart = async ({ nativeEvent: { url } }: Object) => {
@@ -277,9 +277,6 @@ export default class LinkedInModal extends React.Component {
     } = this.props
     return (
       <View>
-        <TouchableOpacity onPress={this.open}>
-          {this.renderButton()}
-        </TouchableOpacity>
         <Modal animationType={animationType} transparent visible={modalVisible}>
           <View style={[styles.constainer, containerStyle]}>
             <View style={[styles.wrapper, wrapperStyle]}>
