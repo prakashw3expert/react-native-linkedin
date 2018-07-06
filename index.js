@@ -267,6 +267,12 @@ export default class LinkedInModal extends React.Component {
       <Image source={require('./assets/x-white.png')} resizeMode="contain" />
     )
   }
+  
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.visiblity !== this.props.visiblity) {
+      this.setState({ modalVisible: nextProps.visiblity })
+    }
+  }
 
   render() {
     const { modalVisible } = this.state
